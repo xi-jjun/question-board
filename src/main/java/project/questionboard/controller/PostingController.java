@@ -13,6 +13,7 @@ import project.questionboard.domain.Posting;
 import project.questionboard.repository.PostingRepoMemoryImp;
 import project.questionboard.repository.PostingRepository;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -35,6 +36,9 @@ public class PostingController {
 							  @RequestParam("deletePassword") String deletePassword) {
 		Posting posting = new Posting(title, content, code, writer, deletePassword);
 		postingRepository.save(posting);
+		log.info("content = {}", content);
+		log.info("code = {}", code);
+		log.info("info = {}", postingRepository.findOne(posting.getId()));
 		return "redirect:/postings";
 	}
 
@@ -51,7 +55,12 @@ public class PostingController {
 	public String getPosting(@PathVariable("postingId") String postingId, Model model) {
 		log.info("find Posting");
 		Posting posting = postingRepository.findOne(Integer.parseInt(postingId));
+		String content = posting.getContent();
+		String code = posting.getCode();
+
 		model.addAttribute("posting", posting);
+		model.addAttribute("contents", Arrays.asList(posting.getContent().split("\n")));
+		model.addAttribute("codes", Arrays.asList(posting.getCode().split("\n")));
 		return "posting";
 	}
 }
