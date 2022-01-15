@@ -2,43 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Hello</title>
+    <title>게시물 작성</title>
 
     <meta charset="utf-8">
+    <meta charset="utf-8">
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
-    <h1>게시글 추가 화면</h1>
-    <div class="posting form">
-      <form class="posting" action="/postings/new" method="post">
-        <div class="input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">제목</span>
-          <input type="text" class="form-control" placeholder="title" name="title" aria-label="title" aria-describedby="addon-wrapping">
-        </div>
 
-        <div class="input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">내용</span>
-          <input type="text" class="form-control" placeholder="content" name="content" aria-label="content" aria-describedby="addon-wrapping">
-        </div>
+    <div class="container" style="max-width: 1200px">
+      <h1>게시글 작성</h1>
+      <div class="posting form">
+        <form class="posting" action="/postings/new" method="post">
 
-        <div class="input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">Code</span>
-          <input type="code" class="form-control" placeholder="code" name="code" aria-label="code" aria-describedby="addon-wrapping">
-        </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">제목</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="code" rows="3"></textarea>
+          </div>
 
-        <div class="input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">Password</span>
-          <input type="code" class="form-control" placeholder="password" name="deletePassword" aria-label="deletePassword" aria-describedby="addon-wrapping">
-        </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">작성자 이름</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="writer" placeholder="writer">
+            <label for="exampleFormControlInput1" class="form-label">게시글 비밀번호</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="deletePassword" placeholder="password">
+          </div>
 
-        <div class="input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">Writer</span>
-          <input type="code" class="form-control" placeholder="writer" name="writer" aria-label="writer" aria-describedby="addon-wrapping">
-        </div>
-
-        <input type="submit" value="Save">
-      </form>
+          <input type="submit" class="btn btn-dark" value="Save">
+        </form>
+      </div>
     </div>
   </body>
 
