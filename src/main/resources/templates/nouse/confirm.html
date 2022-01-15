@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Confirm</title>
+
+    <meta charset="utf-8">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <h1>게시글 사용자 확인 화면</h1>
+    <div class="posting form">
+      <div th:object="${posting}">
+
+        <form class="posting" th:href="@{|/postings/*{id}/confirm|}" method="post">
+
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Writer</span>
+            <input type="code" class="form-control" placeholder="writer" name="writer" aria-label="writer" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Password</span>
+            <input type="code" class="form-control" placeholder="password" name="deletePassword" aria-label="deletePassword" aria-describedby="addon-wrapping">
+          </div>
+
+          <input type="submit" value="Submit">
+        </form>
+
+      </div>
+    </div>
+  </body>
+
+</html>
