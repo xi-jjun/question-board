@@ -17,22 +17,22 @@
 
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">제목</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="title">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" maxlength="45" minlength="1" placeholder="title">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3" maxlength="195" minlength="1"></textarea>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Code</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="code" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="code" rows="3" maxlength="245" minlength="1"></textarea>
           </div>
 
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">작성자 이름</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="writer" placeholder="writer">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="writer" maxlength="17" minlength="2" placeholder="writer">
             <label for="exampleFormControlInput1" class="form-label">게시글 비밀번호</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="deletePassword" placeholder="password">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="deletePassword" maxlength="15" minlength="3" placeholder="password">
           </div>
 
           <input type="submit" class="btn btn-dark" value="Save">
