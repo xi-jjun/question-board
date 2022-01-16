@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Repository
+//@Repository
 public class PostingRepoMemoryImp implements PostingRepository {
 
 	private static int id = 0;
@@ -28,7 +28,7 @@ public class PostingRepoMemoryImp implements PostingRepository {
 
 	@Override
 	public void save(Posting posting) {
-		posting.setId(++id);
+//		posting.setId(++id);
 		store.put(id, posting);
 	}
 
@@ -43,11 +43,10 @@ public class PostingRepoMemoryImp implements PostingRepository {
 	}
 
 	@Override
-	public void remove(Long id) {
+	public void remove(int id) {
 		store.remove(id);
 	}
 
-	@Override
 	public void clearAll() {
 		store.clear();
 	}
