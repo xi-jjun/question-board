@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Hello</title>
+    <title>게시물</title>
 
     <meta charset="utf-8">
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../static/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/comment.css">
     <style>
       html,
       body,
@@ -28,59 +29,72 @@
         line-height: 50%;
       }
 
+      .title {
+        color: black;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .codeArea {
+        background-color: #FFFBDA;
+        color: black;
+        margin-bottom: 5px;
+      }
+
+      .total_width {
+        display: grid;
+        grid-template-columns: 1f;
+      }
+
+      .grid-tem {
+        display: grid;
+        grid-template-columns: 1f;
+      }
+
+      .btn-width {
+        width: 200px;
+      }
+
+      .margin-comment {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
     </style>
   </head>
 
   <body>
-    <div class="w3-container w3-card w3-white w3-round w3-margin" th:object="${posting}"><br>
-      <!-- <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px"> -->
-      <!-- <span class="w3-right w3-opacity">1 min</span> -->
-      <h1 th:text="*{title}">Posting Title</h1><br>
-      <hr class="w3-clear">
 
-      <div class="main_content" th:each="content : ${contents}">
-        <p style="font-size: 30px;" th:text="${content}">Content </p>
-      </div>
 
-      <!-- <p style="font-size: 30px;" th:text="*{content}">Content </p> -->
-      <div th:each="code : ${codes}">
-        <code style="font-size: 20px;" th:text="${code}">Code </code>
-      </div>
-      <!-- <code style="font-size: 20px" th:text="*{code}">print("Hello World!")</code> -->
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half">
-          <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+    <section class="total_width">
+
+      <div class="container" th:object="${posting}">
+        <div class="w3-container w3-card w3-white w3-round w3-margin" th:object="${posting}"><br>
+          <h1 class="title" th:text="*{title}">Posting Title</h1><br>
+          <hr class="w3-clear">
+
+          <p style="font-size: 25px; white-space: pre;" th:text="*{content}">Content</p>
+
+          <div class="codeArea">
+            <code style="font-size: 17px; white-space: pre;" th:text="*{code}"> print("Hello World!") </code>
+          </div>
+
+          <br>
+          <!-- <div th:each="code : ${codes}" style="margin-bottom: 0px;">
+            <code class="codeArea" style="font-size: 17px; white-space: pre;" th:text="${code}"> print("Hello World!") </code>
+          </div> -->
+
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
         </div>
-        <div class="w3-half">
-          <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-        </div>
-      </div>
-      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
-      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
-    </div>
+    </section>
 
 
-
-    <!-- <div th:object="${posting}">
-      <h1>No. <span th:text="*{id}">#</span> 게시물 </h1>
-      <h2 th:text="*{title}">제목</h2>
-      <p th:text="*{content}">글 본문</p>
-      <code th:text="*{code}">코드 내용</code>
-    </div> -->
+    <script src="https://utteranc.es/client.js" repo="xi-jjun/question-board-comment" issue-term="url" theme="github-light" crossorigin="anonymous" async>
+    </script>
 
 
-
-    <!-- <div class="w3-main" style="margin-left:250px">
-
-      <div class="w3-row w3-padding-64" th:object="${posting}">
-        <div class="w3-twothird w3-container">
-          <h1 class="w3-text-teal" th:text="*{title}">Title</h1>
-          <p th:text="*{content}">Content</p>
-          <code th:text="*{code}">코드 내용</code>
-        </div>
-
-      </div>
-    </div> -->
   </body>
+
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
 
 </html>
