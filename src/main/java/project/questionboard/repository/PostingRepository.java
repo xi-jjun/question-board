@@ -11,7 +11,5 @@ public interface PostingRepository {
 
 	public List<Posting> findAll();
 
-	public void remove(Long id);
-
-	public void clearAll();
+	public void remove(int id);
 }
