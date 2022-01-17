@@ -9,6 +9,7 @@
 - 2021 01 16 버그
   - 1번과 3번 게시물에서 댓글이 공유되고 있는 현상 발생 
   - 첫 메인 화면 route가 "/". 실제로 게시물을 볼 수 있는 곳은 "/postings". 이 부분 수정 필요
+  - 날짜가 한국시간이 아닌 이슈.
 
 <br>
 
@@ -32,3 +33,17 @@
   - `utterances` 사용하여 댓글 기능 활성화. - 댓글에는 markdown 문법도 적용 가능
   - `MySQL` 로 repo 교체.
   - AWS에 deployment 완료...
+
+<br>
+
+## 개발 환경
+
+```console
+컴퓨터 : Macbook air m1
+개발 언어 : Java
+개발 툴 : Intellij
+서버 : AWS
+DB : MySQL
+```
+
+<br>
