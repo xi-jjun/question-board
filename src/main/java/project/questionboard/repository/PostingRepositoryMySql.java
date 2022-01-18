@@ -27,10 +27,8 @@ public class PostingRepositoryMySql implements PostingRepository{
 
 	@Override
 	public List<Posting> findAll() {
-		List<Posting> postings = em.createQuery("select p from Posting p", Posting.class)
+		return em.createQuery("select p from Posting p", Posting.class)
 				.getResultList();
-		postings.sort((o1, o2) -> o2.getId() - o1.getId());
-		return postings;
 	}
 
 	@Override
