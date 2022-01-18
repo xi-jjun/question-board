@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/login.css">
+
+  </head>
+
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> SIGN UP </h2>
+        <br>
+        <br>
+
+
+        <form class="formContent" action="/users/new" method="post">
+          <input type="text" name="name" placeholder="이름">
+          <input type="text" name="nickName" placeholder="닉네임(게시판에서 보여질 닉네임)">
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+
+          <input type="submit" class="fadeIn fourth" value="회원가입">
+        </form>
+
+        <!-- Help -->
+        <div id="formFooter">
+          <a class="underlineHover" href="https://github.com/xi-jjun/question-board/blob/master/README.md">Help</a>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/login.css">
+
+</html>
