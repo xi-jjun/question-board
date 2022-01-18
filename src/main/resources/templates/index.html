@@ -11,15 +11,22 @@
   </head>
 
   <body>
+
     <div class="container" style="max-width: 1200px">
+      <form style="margin-top: 10px;" action="/logout" method="post">
+        <button class="btn btn-outline-secondary float-right" type="submit">Log out</button>
+      </form>
+
       <table class="table">
         <div class="py-5 text-center">
           <h1>질문 게시판</h1>
         </div>
+
         <div class="row">
           <div class="col">
             <button class="btn btn-outline-secondary float-end" onclick="location.href='addPostingForm.html'" th:onclick="|location.href='@{/postings/new}'|" type="button">글쓰기</button>
             <button class="btn btn-outline-secondary float-left" style="margin-right: 10px;" onclick="location.href='https://github.com/xi-jjun/question-board/blob/master/README.md';" type="button">사용안내</button>
+
           </div>
         </div>
 
@@ -36,8 +43,9 @@
           <tr th:each="posting : ${postings}">
             <td><a href="posting.html" th:href="@{/postings/{postingId}(postingId=${posting.id})}" th:text="${posting.id}">게시물Id</a></td>
             <td><a href="posting.html" th:href="@{|/postings/${posting.id}|}" th:text="${posting.title}">title</a></td>
-            <td th:text="${posting.writer}">writer</td>
+            <td th:text="${posting.user.nickName}">writer</td>
             <td th:text="${#temporals.format(posting.createDate, 'yyyy-MM-dd HH:mm')}">2022.01.02</td>
+            <!-- <td><button class="btn btn-outline-secondary float-left" type="button">사용안내</button></td> -->
           </tr>
         </tbody>
 
